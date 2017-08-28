@@ -1,0 +1,19 @@
+*ngif = true ; muestra
+*ngif = false ; no se muestra en el html
+*ngfor ; muestra elementos en for
+
+en la página hay la siguiente notacion
+
+C clase
+K constante
+I interface
+F funcion
+P pipe
+@ decoradores
+E enumeracion
+D
+
+plunker, guardar codigo y ejectuar en web
+
+
+e2e => pruebas unitarias
