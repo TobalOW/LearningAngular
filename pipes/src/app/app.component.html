@@ -1,0 +1,108 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr>
+      <td>{{ nombre}}</td>
+      <td> uppercarse</td>
+      <td> {{ nombre | uppercase}}</td>
+    </tr>
+    <tr>
+      <td>{{ nombre}}</td>
+      <td> lowercase</td>
+      <td> {{ nombre | lowercase}}</td>
+    </tr>
+    <tr>
+      <td>{{ nombre}}</td>
+      <td> slice:2 </td>
+      <td> {{ nombre | slice:2}}</td>
+    </tr>
+    <tr>
+      <td>{{ nombre}}</td>
+      <td> slice:0:2</td>
+      <td> {{ nombre | slice:0:2}}</td>
+    </tr>
+    <tr>
+      <td>{{ arreglo}}</td>
+      <td> slice:1:6</td>
+      <td> {{ arreglo | slice:1:6}}</td>
+    </tr>
+    <tr>
+      <td>{{ pi }}</td>
+      <td> Number</td>
+      <td> {{ pi | number:'3.0-0'}}</td>
+    </tr>
+    <tr>
+      <td>{{ pi }}</td>
+      <td> Number</td>
+      <td> {{ pi | number:'1.5-10'}}</td>
+    </tr>
+    <tr>
+      <td>{{ a }}</td>
+      <td> Percent</td>
+      <td> {{ a | percent:'2.2-3'}}</td>
+    </tr>
+    <tr>
+      <td>{{ moneda }}</td>
+      <td> Moneda clp</td>
+      <td> {{ moneda | currency:'CLP'}}</td>
+    </tr>
+    <tr>
+      <td>{{ moneda }}</td>
+      <td> Moneda clp</td>
+      <td> {{ moneda | currency:'CLP':true}}</td>
+    </tr>
+    <tr>
+      <td>{{ moneda }}</td>
+      <td> Moneda clp</td>
+      <td> {{ moneda | currency:'EUR':true:'4.0-0'}}</td>
+    </tr>
+    <tr>
+      <td>{{ valordePromesa }}</td>
+      <td> Async</td>
+      <td> {{ valordePromesa | async}}</td>
+    </tr>
+    <tr>
+      <td>{{ fecha }}</td>
+      <td> date</td>
+      <td> {{ fecha | date:'medium' }}</td>
+    </tr>
+    <tr>
+      <td>{{ fecha }}</td>
+      <td> date</td>
+      <td> {{ fecha | date:'MMMM - dd' }}</td>
+    </tr>
+    <tr>
+      <td>{{ nombre2 }}</td>
+      <td> Capitalizado </td>
+      <td> {{ nombre2 |  capitaliza  }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slice</h4>
+<ul>
+  <li *ngFor="let item of arreglo | slice:5">{{item}}</li>
+</ul>
+
+  <h4>JSON</h4>
+  <pre>
+    {{ heroe | json}}
+  </pre>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
