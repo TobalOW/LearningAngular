@@ -26,4 +26,11 @@ export class AppComponent {
   })
 
   fecha = new Date();
+
+  video = "g4WO14TRdmY";
+
+  contrasena = "holaquetalsoysebastian";
+
+  activar:boolean =  true;
+
 }
