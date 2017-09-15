@@ -1,3 +1,24 @@
-<p>
-  artista works!
-</p>
+<div class="container top-30">
+  <div class="row">
+    <div class="col-md-4">
+        <img class="img-circle col-md-12" [src]="artista.images[3] | withoutphoto" alt="">
+    </div>
+    <div class="col-md-8">
+      <h1>{{artista.name}}</h1>
+      <br>
+      <h6>{{ artista.href}}</h6>
+    </div>
+
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Top Tracks</h3>
+      <hr>
+      <ul class="list-group">
+        <li *ngFor="let track of pistas" class="list-group-item">
+           <img class ="img-thumbnail" [src]="track.album.images[2] | withoutphoto" alt="" style="width:50px;height:50px;"> <h1 class="text-left">{{ track.name}}</h1></li>
+      </ul>
+    </div>
+  </div>
+</div>

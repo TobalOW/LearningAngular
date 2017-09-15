@@ -14,15 +14,13 @@ export class SpotifyService {
 
   getArtistas(word:string){
     let headers = new Headers();
-    headers.append('authorization', 'Bearer BQCU41gxJPfB3Hniq6kZQmHSYZBGdA8uOUdc1D6q6ZbA_ZQ7a2hFzNEV8dU5JzgffT15E5cXZ7PPJsOTIh5VsQ');
+    headers.append('authorization', 'Bearer BQCov8JCpfEZduNcjDAEM1PrON6CIzOe1k7ry9zhnuVqiG4N-832o7JUqJ4HXprjPy2jKEBrfkLhXl06k8o9gg');
     let query = `?q=${ word }&type=artist`;
     let url = this.urlSearch + query;
 
     return this.http.get(url, {headers})
             .map( response =>{
               this.artistas = response.json().artists.items;
-              console.log(this.artistas);
-
               return response.json().artists.items;
             });
 
@@ -31,16 +29,29 @@ export class SpotifyService {
   }
   getArtista(word:string){
     let headers = new Headers();
-    headers.append('authorization', 'Bearer BQDFbQlEuBSuX224WBBnndPl8VRkfXsxH2illu0323zSB5cRaxOvGHhvvVXO1aL_CbyS-qPeFyCUSrS1oO1Rhw');
+    headers.append('authorization', 'Bearer BQAcDSrxtmWdLvrFTsnyxIXO3BZl-zWIWq9fYU5Dts2pz1B4ehXx5pDnpHcJDLwRDStFNuh86NZScyAV_dlm3w');
     let query = `/${ word }`;
     let url = this.urlArtist + query;
 
     return this.http.get(url, {headers})
             .map( response =>{
-              this.artistas = response.json();
-              console.log(this.artistas);
+              console.log(response.json());
+              return response.json();
+            });
 
-              // return response.json().artists.items;
+
+
+  }
+  getTop(id_artista:string){
+    let headers = new Headers();
+    headers.append('authorization', 'Bearer BQAcDSrxtmWdLvrFTsnyxIXO3BZl-zWIWq9fYU5Dts2pz1B4ehXx5pDnpHcJDLwRDStFNuh86NZScyAV_dlm3w');
+    let query = `/${ id_artista }/top-tracks?country=US`;
+    let url = this.urlArtist + query;
+
+    return this.http.get(url, {headers})
+            .map( response =>{
+              console.log(response.json().tracks);
+              return response.json().tracks;
             });
 
 
